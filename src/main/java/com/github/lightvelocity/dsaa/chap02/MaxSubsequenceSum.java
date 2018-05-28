@@ -15,7 +15,8 @@ public class MaxSubsequenceSum {
         int[] ints = new int[n];
         Random random = new Random();
         for (int i = 0; i < n; i++) {
-            ints[i] = (random.nextBoolean() ? 1 : -1) * random.nextInt();
+            ints[i] = (random.nextBoolean() ? 1 : -1) *
+                    random.nextInt(Integer.MAX_VALUE >> 10);
         }
         return ints;
     }
@@ -109,10 +110,11 @@ public class MaxSubsequenceSum {
     }
 
     public static void main(String[] args) {
-        int[] ints = randomInts(1000000);
+        //int[] ints = randomInts(100000);
+        int[] ints = {1, 2, 3, -10, -10, 4, 5, 6};
         //NumberUtil.printInts(ints);
         //solution0(ints);
-        //solution1(ints);
+        solution1(ints);
         solution3(ints);
     }
 }
